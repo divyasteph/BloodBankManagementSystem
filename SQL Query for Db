@@ -1,0 +1,36 @@
+create database bloodBankDB
+use bloodBankDB
+
+-----------------------------------------------
+create table blood_stock(Stock_ID int primary key identity(1,1) not null,
+Blood_Group varchar(10), Unit_Available int)
+
+------------------------------------------------
+create table donor(Donor_ID int primary key identity(1,1) not null, 
+Name varchar(10), BloodGroup varchar(20), 
+Unit int, Hospital varchar(20), Phone int, Status varchar(20) default(‘Pending’))
+
+-------------------------------------------------
+
+create table receiver(Receiver_ID int primary key identity(1,1) not null, 
+Name varchar(10), BloodGroup varchar(20), Unit int, Hospital varchar(20),
+Phone int, Status varchar(20) default(‘Pending’))
+
+---------------------------------------------------
+create table Person(Person_ID int identity(1,1) primary key, Name varchar(20), Address varchar(20), Phone int, IsActive varchar(10) default(‘Yes’), Password varchar(20));
+
+----------------------------------------------------
+
+create proc sp_Login(@Name varchar(20), @Password varchar(20))
+as
+begin
+	select * from Person where Name=@Name and Password=@Password
+end
+
+--------------------------------------------------------
+create proc sp_Registration(@Name varchar(20),@Address varchar(20),@Phone int, @IsActive varchar(10), @Password varchar(20))
+as
+begin
+	insert into person(Name, Address, Phone, IsActive, Password) values (@Name, @Address, @Phone, @IsActive, @Password)
+end
+
