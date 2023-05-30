@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="BBMS-Web.config Connection String" description="BBMS Connection String used in web.config by the application to access the database." defaultValue="Data Source=LIN59017052\SQLEXPRESS; Initial Catalog = bloodBankDB; Integrated Security=true " tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\distephe\\Downloads\\BloodBank\ System\\Server-\ Asp\\CRUD_Op\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BBMS']/@connectionString" />
+  </parameter>
+</parameters>
